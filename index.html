@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Codex | Tripulação, Akuma no Mi e galeria do Chapéu de Palha</title>
+    <meta name="description"
+        content="One Piece Codex: site de fã com a tripulação dos Piratas do Chapéu de Palha, os navios, as Akuma no Mi e uma galeria com rolagem infinita. Feito com HTML, CSS e JavaScript puros.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#07182b">
+    <meta name="color-scheme" content="dark">
+    <link rel="canonical" href="https://hugohendrix.github.io/one-piece-codex/">
+    <link rel="icon" type="image/png" href="assets/icones/favicon.png">
+    <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="One Piece Codex">
+    <meta property="og:url" content="https://hugohendrix.github.io/one-piece-codex/">
+    <meta property="og:title" content="One Piece Codex | Tripulação, Akuma no Mi e galeria do Chapéu de Palha">
+    <meta property="og:description"
+        content="Conheça a tripulação, os navios e as Akuma no Mi do bando do Chapéu de Palha. Site de fã com busca, detalhes e galeria.">
+    <meta property="og:image" content="https://hugohendrix.github.io/one-piece-codex/assets/hero/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Thousand Sunny navegando em uma tempestade, com o título One Piece Codex">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="One Piece Codex">
+    <meta name="twitter:description" content="Tripulação, navios, Akuma no Mi e galeria do bando do Chapéu de Palha.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/one-piece-codex/assets/hero/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "One Piece Codex",
+        "url": "https://hugohendrix.github.io/one-piece-codex/",
+        "description": "Site de fã com a tripulação, os navios e as Akuma no Mi do bando do Chapéu de Palha.",
+        "inLanguage": "pt-BR",
+        "author": { "@type": "Person", "name": "Hugo Hendrix", "url": "https://hugohendrix.github.io/portfolio-hugo/" }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/dados.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="topo">
+        <div class="topo-interno">
+            <a class="marca" href="#inicio">
+                <img src="assets/icones/emblema.webp" alt="" width="40" height="40">
+                <span>One Piece <b>Codex</b></span>
+            </a>
+            <button type="button" id="abrir-menu" class="menu-botao" aria-expanded="false" aria-controls="menu"
+                aria-label="Abrir menu">☰</button>
+            <nav id="menu" class="menu" aria-label="Principal">
+                <ul>
+                    <li><a href="#tripulacao">Tripulação</a></li>
+                    <li><a href="#akuma-no-mi">Akuma no Mi</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <!-- INÍCIO -->
+        <section class="hero" id="inicio" aria-labelledby="titulo">
+            <div class="hero-fundo" aria-hidden="true"></div>
+            <div class="hero-texto">
+                <p class="selo">Site de fã</p>
+                <h1 id="titulo">Bem-vindo ao <span>One Piece Codex</span></h1>
+                <p class="lead">Um guia da tripulação dos Piratas do Chapéu de Palha: os personagens, os dois navios, as
+                    Akuma no Mi e uma galeria para navegar sem parar.</p>
+                <div class="acoes">
+                    <a class="botao" href="#tripulacao">Conhecer a tripulação</a>
+                    <a class="botao botao-sec" href="#galeria">Ver a galeria</a>
+                </div>
+                <ul class="numeros" aria-label="Resumo do Codex">
+                    <li><strong id="n-tripulantes">10</strong> tripulantes</li>
+                    <li><strong id="n-navios">2</strong> navios</li>
+                    <li><strong id="n-frutas">4</strong> Akuma no Mi</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TRIPULAÇÃO -->
+        <section class="secao" id="tripulacao" aria-labelledby="t-tripulacao">
+            <header class="secao-topo">
+                <h2 id="t-tripulacao">Tripulação e navios</h2>
+                <p>Bando do Chapéu de Palha (<i lang="ja">Mugiwara no Ichimi</i>). Escolha um card para ler a história.</p>
+            </header>
+
+            <div class="ferramentas">
+                <div class="campo-busca">
+                    <label for="busca">Buscar por nome, função ou história</label>
+                    <input id="busca" type="search" placeholder="Ex.: navegadora, Sunny, médico" autocomplete="off">
+                </div>
+                <div class="filtros" role="group" aria-label="Filtrar por tipo">
+                    <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+                    <button type="button" class="filtro" data-filtro="tripulante" aria-pressed="false">Tripulantes</button>
+                    <button type="button" class="filtro" data-filtro="navio" aria-pressed="false">Navios</button>
+                </div>
+            </div>
+            <p class="contagem" id="contagem" role="status" aria-live="polite"></p>
+            <ul class="cartas" id="lista-tripulacao">
+                <!--GERADO:cartas-->
+                <li class="carta" data-id="luffy" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/luffy.webp" alt="Monkey D. Luffy, ilustração" width="400" height="400" loading="lazy">
+                            <span class="selo-fruta">Paramecia</span>
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Monkey D. Luffy</h3>
+                            <p class="carta-funcao">Capitão</p>
+                            <p class="carta-resumo">Luffy, o capitão dos Piratas do Chapéu de Palha, é o protagonista da série de mangá e anime One Piece.</p>
+                            <a class="carta-botao" href="#luffy" data-abrir="luffy" aria-label="Ler a história de Monkey D. Luffy">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="zoro" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/zoro.webp" alt="Roronoa Zoro, ilustração" width="400" height="400" loading="lazy">
+                            
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Roronoa Zoro</h3>
+                            <p class="carta-funcao">Espadachim</p>
+                            <p class="carta-resumo">Zoro foi a primeira pessoa que Luffy recrutou para a sua tripulação e ele é o segundo membro mais forte do...</p>
+                            <a class="carta-botao" href="#zoro" data-abrir="zoro" aria-label="Ler a história de Roronoa Zoro">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="nami" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/nami.webp" alt="Nami, ilustração" width="400" height="400" loading="lazy">
+                            
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Nami</h3>
+                            <p class="carta-funcao">Navegadora</p>
+                            <p class="carta-resumo">Nami é a navegadora do navio e luta usando armas, assim como Usopp, por não ter uma especialidade em combate...</p>
+                            <a class="carta-botao" href="#nami" data-abrir="nami" aria-label="Ler a história de Nami">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="usopp" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/usopp.webp" alt="Usopp, ilustração" width="400" height="400" loading="lazy">
+                            
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Usopp</h3>
+                            <p class="carta-funcao">Atirador</p>
+                            <p class="carta-resumo">Usopp também é um dos primeiros membros que entrou nos Piratas do Chapéu de Palha e ele é um dos amigos mais...</p>
+                            <a class="carta-botao" href="#usopp" data-abrir="usopp" aria-label="Ler a história de Usopp">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="sanji" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/sanji.webp" alt="Sanji, ilustração" width="400" height="400" loading="lazy">
+                            
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Sanji</h3>
+                            <p class="carta-funcao">Cozinheiro</p>
+                            <p class="carta-resumo">Sanji é um dos melhores lutadores dos Piratas do Chapéu de Palha, mas o seu papel na tripulação é de...</p>
+                            <a class="carta-botao" href="#sanji" data-abrir="sanji" aria-label="Ler a história de Sanji">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="chopper" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/chopper.webp" alt="Tony Tony Chopper, ilustração" width="400" height="400" loading="lazy">
+                            <span class="selo-fruta">Zoan</span>
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Tony Tony Chopper</h3>
+                            <p class="carta-funcao">Médico</p>
+                            <p class="carta-resumo">Chopper é considerado o mascote dos Piratas do Chapéu de Palha, mas ele tem uma das funções mais importantes...</p>
+                            <a class="carta-botao" href="#chopper" data-abrir="chopper" aria-label="Ler a história de Tony Tony Chopper">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="robin" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/robin.webp" alt="Nico Robin, ilustração" width="400" height="400" loading="lazy">
+                            <span class="selo-fruta">Paramecia</span>
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Nico Robin</h3>
+                            <p class="carta-funcao">Arqueóloga</p>
+                            <p class="carta-resumo">Robin é a arqueóloga da tripulação e um dos membros mais valiosos, já que é a única pessoa viva no mundo que...</p>
+                            <a class="carta-botao" href="#robin" data-abrir="robin" aria-label="Ler a história de Nico Robin">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="brook" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/brook.webp" alt="Brook, ilustração" width="400" height="400" loading="lazy">
+                            <span class="selo-fruta">Paramecia</span>
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Brook</h3>
+                            <p class="carta-funcao">Músico</p>
+                            <p class="carta-resumo">Brook é o músico dos Piratas do Chapéu de Palha e o membro mais velho entre eles. Ele fazia parte dos Piratas...</p>
+                            <a class="carta-botao" href="#brook" data-abrir="brook" aria-label="Ler a história de Brook">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="franky" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/franky.webp" alt="Franky, ilustração" width="400" height="400" loading="lazy">
+                            
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Franky</h3>
+                            <p class="carta-funcao">Carpinteiro</p>
+                            <p class="carta-resumo">Franky é o carpinteiro dos Chapéus de Palha e construiu o navio Thousand Sunny para a tripulação continuar...</p>
+                            <a class="carta-botao" href="#franky" data-abrir="franky" aria-label="Ler a história de Franky">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="jinbe" data-tipo="tripulante">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/jinbe.webp" alt="Jinbe, ilustração" width="400" height="400" loading="lazy">
+                            
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Tripulante</p>
+                            <h3>Jinbe</h3>
+                            <p class="carta-funcao">Timoneiro</p>
+                            <p class="carta-resumo">Jinbe é o timoneiro dos Chapéus de Palha e o último membro que se juntou ao grupo até o momento. Ele conheceu...</p>
+                            <a class="carta-botao" href="#jinbe" data-abrir="jinbe" aria-label="Ler a história de Jinbe">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="merry" data-tipo="navio">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/merry.webp" alt="Going Merry, ilustração" width="400" height="400" loading="lazy">
+                            
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Navio</p>
+                            <h3>Going Merry</h3>
+                            <p class="carta-funcao">Primeiro navio do bando</p>
+                            <p class="carta-resumo">O Going Merry, carinhosamente apelidado de Merry, era o navio dos Chapéus de Palha durante a primeira metade...</p>
+                            <a class="carta-botao" href="#merry" data-abrir="merry" aria-label="Ler a história de Going Merry">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <li class="carta" data-id="sunny" data-tipo="navio">
+                    <article>
+                        <div class="carta-arte">
+                            <img src="assets/arte/sunny.webp" alt="Thousand Sunny, ilustração" width="400" height="400" loading="lazy">
+                            
+                        </div>
+                        <div class="carta-info">
+                            <p class="carta-tipo">Navio</p>
+                            <h3>Thousand Sunny</h3>
+                            <p class="carta-funcao">Navio atual do bando</p>
+                            <p class="carta-resumo">O Thousand Sunny é o segundo navio dos Chapéus de Palha, substituindo o Going Merry depois de sua despedida...</p>
+                            <a class="carta-botao" href="#sunny" data-abrir="sunny" aria-label="Ler a história de Thousand Sunny">Ver história</a>
+                        </div>
+                    </article>
+                </li>
+                <!--/GERADO:cartas-->
+            </ul>
+        </section>
+
+        <!-- AKUMA NO MI -->
+        <section class="secao secao-escura" id="akuma-no-mi" aria-labelledby="t-akuma">
+            <header class="secao-topo">
+                <h2 id="t-akuma">Akuma no Mi</h2>
+                <p>As Frutas do Diabo concedem poderes especiais a quem as come, mas cobram um preço alto: o usuário
+                    perde a capacidade de nadar.</p>
+            </header>
+
+            <div class="tipos" id="tipos-fruta">
+            <!--GERADO:tipos-->
+            <div class="tipo-fruta">
+                <h3>Paramecia</h3>
+                <p>Poderes que alteram o corpo do usuário ou criam e controlam substâncias.</p>
+            </div>
+            <div class="tipo-fruta">
+                <h3>Zoan</h3>
+                <p>Permitem ao usuário se transformar em um animal ou assumir uma forma híbrida.</p>
+            </div>
+            <div class="tipo-fruta">
+                <h3>Logia</h3>
+                <p>Transformam o corpo do usuário em um elemento da natureza, como fogo ou gelo.</p>
+            </div>
+                <!--/GERADO:tipos-->
+        </div>
+
+            <h3 class="subtitulo">Quem comeu uma fruta no bando</h3>
+            <ul class="frutas" id="lista-frutas">
+                <!--GERADO:frutas-->
+                <li class="fruta">
+                    <img src="assets/arte/luffy.webp" alt="Monkey D. Luffy, usuário da Gomu Gomu no Mi" width="400" height="400" loading="lazy">
+                    <div>
+                        <p class="fruta-tipo">Paramecia</p>
+                        <h4>Gomu Gomu no Mi</h4>
+                        <p class="fruta-usuario">Usuário: <a href="#luffy" data-abrir="luffy">Monkey D. Luffy</a></p>
+                        <p>Transforma o corpo de Luffy em borracha.</p>
+                    </div>
+                </li>
+                <li class="fruta">
+                    <img src="assets/arte/chopper.webp" alt="Tony Tony Chopper, usuário da Hito Hito no Mi" width="400" height="400" loading="lazy">
+                    <div>
+                        <p class="fruta-tipo">Zoan</p>
+                        <h4>Hito Hito no Mi</h4>
+                        <p class="fruta-usuario">Usuário: <a href="#chopper" data-abrir="chopper">Tony Tony Chopper</a></p>
+                        <p>Deu a Chopper a inteligência humana e a capacidade de assumir uma forma humana.</p>
+                    </div>
+                </li>
+                <li class="fruta">
+                    <img src="assets/arte/robin.webp" alt="Nico Robin, usuário da Hana Hana no Mi" width="400" height="400" loading="lazy">
+                    <div>
+                        <p class="fruta-tipo">Paramecia</p>
+                        <h4>Hana Hana no Mi</h4>
+                        <p class="fruta-usuario">Usuário: <a href="#robin" data-abrir="robin">Nico Robin</a></p>
+                        <p>Permite que Robin faça brotar partes do corpo em qualquer superfície.</p>
+                    </div>
+                </li>
+                <li class="fruta">
+                    <img src="assets/arte/brook.webp" alt="Brook, usuário da Yomi Yomi no Mi" width="400" height="400" loading="lazy">
+                    <div>
+                        <p class="fruta-tipo">Paramecia</p>
+                        <h4>Yomi Yomi no Mi</h4>
+                        <p class="fruta-usuario">Usuário: <a href="#brook" data-abrir="brook">Brook</a></p>
+                        <p>Concedeu a Brook uma segunda vida, ressuscitando-o depois de morto.</p>
+                    </div>
+                </li>
+                <!--/GERADO:frutas-->
+            </ul>
+            <p class="nota">Zoro, Nami, Usopp, Sanji, Franky e Jinbe não comeram nenhuma Akuma no Mi e são capazes de nadar.</p>
+        </section>
+
+        <!-- GALERIA -->
+        <section class="secao" id="galeria" aria-labelledby="t-galeria">
+            <header class="secao-topo">
+                <h2 id="t-galeria">Galeria</h2>
+                <p>Cenas do anime em rolagem contínua. Passe o mouse, use o botão ou toque em uma imagem para ampliar.</p>
+            </header>
+            <div class="galeria-controle">
+                <button type="button" id="pausar" class="botao botao-sec botao-pequeno" aria-pressed="false">Pausar a rolagem</button>
+            </div>
+            <div class="galeria" id="galeria-rolagem" role="region" aria-label="Galeria de cenas" tabindex="0">
+                <ul class="trilha" id="trilha">
+                <!--GERADO:galeria-->
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="luffy" aria-label="Ampliar a imagem de Monkey D. Luffy">
+                        <img src="assets/cenas/luffy.webp" alt="Cena do anime com Luffy sorrindo e segurando o chapéu de palha" width="720" height="410" loading="lazy">
+                        <span>Monkey D. Luffy</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="zoro" aria-label="Ampliar a imagem de Roronoa Zoro">
+                        <img src="assets/cenas/zoro.webp" alt="Cena do anime com Roronoa Zoro" width="720" height="410" loading="lazy">
+                        <span>Roronoa Zoro</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="nami" aria-label="Ampliar a imagem de Nami">
+                        <img src="assets/cenas/nami.webp" alt="Cena do anime com Nami" width="720" height="410" loading="lazy">
+                        <span>Nami</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="usopp" aria-label="Ampliar a imagem de Usopp">
+                        <img src="assets/cenas/usopp.webp" alt="Cena do anime com Usopp" width="720" height="410" loading="lazy">
+                        <span>Usopp</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="sanji" aria-label="Ampliar a imagem de Sanji">
+                        <img src="assets/cenas/sanji.webp" alt="Cena do anime com Sanji" width="720" height="410" loading="lazy">
+                        <span>Sanji</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="chopper" aria-label="Ampliar a imagem de Tony Tony Chopper">
+                        <img src="assets/cenas/chopper.webp" alt="Cena do anime com Tony Tony Chopper" width="720" height="410" loading="lazy">
+                        <span>Tony Tony Chopper</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="robin" aria-label="Ampliar a imagem de Nico Robin">
+                        <img src="assets/cenas/robin.webp" alt="Cena do anime com Nico Robin" width="720" height="410" loading="lazy">
+                        <span>Nico Robin</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="brook" aria-label="Ampliar a imagem de Brook">
+                        <img src="assets/cenas/brook.webp" alt="Cena do anime com Brook" width="720" height="410" loading="lazy">
+                        <span>Brook</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="franky" aria-label="Ampliar a imagem de Franky">
+                        <img src="assets/cenas/franky.webp" alt="Cena do anime com Franky" width="720" height="410" loading="lazy">
+                        <span>Franky</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="jinbe" aria-label="Ampliar a imagem de Jinbe">
+                        <img src="assets/cenas/jinbe.webp" alt="Cena do anime com Jinbe" width="720" height="410" loading="lazy">
+                        <span>Jinbe</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="merry" aria-label="Ampliar a imagem de Going Merry">
+                        <img src="assets/cenas/merry.webp" alt="Cena do anime com Going Merry" width="720" height="410" loading="lazy">
+                        <span>Going Merry</span>
+                    </button>
+                </li>
+                <li class="foto-item">
+                    <button type="button" class="foto" data-foto="sunny" aria-label="Ampliar a imagem de Thousand Sunny">
+                        <img src="assets/cenas/sunny.webp" alt="Cena do anime com Thousand Sunny" width="720" height="410" loading="lazy">
+                        <span>Thousand Sunny</span>
+                    </button>
+                </li>
+                <!--/GERADO:galeria-->
+            </ul>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section class="secao secao-escura" id="sobre" aria-labelledby="t-sobre">
+            <header class="secao-topo">
+                <h2 id="t-sobre">Sobre o projeto</h2>
+            </header>
+            <div class="sobre">
+                <div>
+                    <p>O One Piece Codex reúne em um só site três projetos de estudo que eu fiz separadamente: uma
+                        landing page, uma galeria com rolagem infinita e uma lista de personagens em React. Aqui tudo
+                        foi refeito do zero, com HTML, CSS e JavaScript puros.</p>
+                    <ul class="lista">
+                        <li>Busca e filtros acessíveis, com detalhes em janela modal.</li>
+                        <li>Galeria com botão de pausa e respeito a <code>prefers-reduced-motion</code>.</li>
+                        <li>Imagens em WebP, carregamento preguiçoso e layout responsivo.</li>
+                        <li>Navegação completa pelo teclado e leitores de tela.</li>
+                    </ul>
+                    <p class="links">
+                        <a class="botao" href="https://github.com/HugoHendrix/one-piece-codex" target="_blank" rel="noopener noreferrer">Ver o código</a>
+                        <a class="botao botao-sec" href="https://hugohendrix.github.io/portfolio-hugo/" target="_blank" rel="noopener noreferrer">Meu portfólio</a>
+                        <a class="botao botao-sec" href="https://www.linkedin.com/in/hugohendrix/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </p>
+                </div>
+                <aside class="aviso" aria-label="Aviso legal">
+                    <h3>Projeto de fã</h3>
+                    <p>One Piece, seus personagens e as imagens pertencem a Eiichiro Oda, à Shueisha e à Toei Animation.
+                        Este site é um projeto de estudo, sem fins lucrativos e sem vínculo com os detentores dos
+                        direitos.</p>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>Feito por Hugo Hendrix, com HTML, CSS e JavaScript puros. Projeto de fã sem fins lucrativos.</p>
+    </footer>
+
+    <dialog id="detalhe" class="modal" aria-labelledby="d-nome">
+        <article class="modal-corpo">
+            <button type="button" class="modal-fechar" id="d-fechar" aria-label="Fechar">×</button>
+            <img id="d-imagem" class="modal-imagem" alt="" width="720" height="410">
+            <div class="modal-texto">
+                <p class="modal-funcao" id="d-funcao"></p>
+                <h3 id="d-nome"></h3>
+                <p id="d-historia"></p>
+                <div id="d-fruta" class="modal-fruta" hidden></div>
+                <div class="modal-nav">
+                    <button type="button" class="botao botao-sec botao-pequeno" id="d-anterior">Anterior</button>
+                    <button type="button" class="botao botao-sec botao-pequeno" id="d-proximo">Próximo</button>
+                </div>
+            </div>
+        </article>
+    </dialog>
+
+    <dialog id="ampliada" class="modal modal-foto" aria-label="Imagem ampliada">
+        <figure class="modal-corpo">
+            <button type="button" class="modal-fechar" id="a-fechar" aria-label="Fechar">×</button>
+            <img id="a-imagem" class="modal-imagem" alt="">
+            <figcaption id="a-legenda"></figcaption>
+        </figure>
+    </dialog>
+
+</body>
+
+</html>
