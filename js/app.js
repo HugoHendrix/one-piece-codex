@@ -154,48 +154,96 @@
         if (e.key === 'ArrowLeft') navegar(-1);
     });
 
-    /* ---------- galeria com rolagem infinita ---------- */
+    /* ---------- galeria: duas faixas infinitas, grade e ampliação ---------- */
     var galeria = $('galeria-rolagem');
-    var trilha = $('trilha');
     var reduzir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var ampliada = $('ampliada');
+    var fotos = [];
+    var indiceFoto = 0;
 
-    Array.prototype.slice.call(trilha.children).forEach(function (item) {
-        var copia = item.cloneNode(true);
-        copia.setAttribute('aria-hidden', 'true');
-        copia.querySelectorAll('button').forEach(function (b) { b.tabIndex = -1; });
-        trilha.appendChild(copia);
+    ['trilha', 'trilha-arte'].forEach(function (idTrilha) {
+        var trilha = $(idTrilha);
+        Array.prototype.slice.call(trilha.children).forEach(function (item) {
+            var botao = item.querySelector('[data-foto]');
+            var img = item.querySelector('img');
+            var tipo = botao.dataset.tipoFoto;
+            var p = porId[botao.dataset.foto];
+            fotos.push({
+                src: 'assets/' + (tipo === 'arte' ? 'arte' : 'cenas') + '/' + p.id + '.webp',
+                alt: img.alt,
+                legenda: p.nome + ', ' + p.funcao + (tipo === 'arte' ? ' (ilustração)' : ' (cena do anime)'),
+                botao: botao
+            });
+            botao._indice = fotos.length - 1;
+            var copia = item.cloneNode(true);
+            copia.setAttribute('aria-hidden', 'true');
+            copia.querySelectorAll('button').forEach(function (b) { b.tabIndex = -1; });
+            trilha.appendChild(copia);
+        });
     });
+    $('g-total').textContent = fotos.length;
 
-    function abrirFoto(id) {
-        var p = porId[id];
-        if (!p) return;
+    function mostrarFoto(i) {
+        indiceFoto = (i + fotos.length) % fotos.length;
+        var f = fotos[indiceFoto];
         var img = $('a-imagem');
-        img.src = 'assets/cenas/' + id + '.webp';
-        img.alt = p.cenaAlt || ('Cena do anime com ' + p.nome);
-        $('a-legenda').textContent = p.nome + ', ' + p.funcao;
+        img.src = f.src;
+        img.alt = f.alt;
+        $('a-legenda').textContent = f.legenda;
+        $('a-contador').textContent = (indiceFoto + 1) + ' de ' + fotos.length;
+    }
+
+    function abrirFoto(i, origem) {
+        ultimoFoco = origem || document.activeElement;
+        mostrarFoto(i);
         if (ampliada.showModal) ampliada.showModal();
         else ampliada.setAttribute('open', '');
     }
 
-    trilha.addEventListener('click', function (e) {
+    galeria.addEventListener('click', function (e) {
         var botao = e.target.closest('[data-foto]');
-        if (botao) {
-            ultimoFoco = botao;
-            abrirFoto(botao.dataset.foto);
+        if (!botao) return;
+        var original = botao;
+        if (botao._indice === undefined) {
+            // clique em uma cópia: acha o original pelo mesmo conteúdo
+            var chave = botao.dataset.foto + botao.dataset.tipoFoto;
+            original = fotos.filter(function (f) { return f.botao.dataset.foto + f.botao.dataset.tipoFoto === chave; })[0].botao;
         }
+        abrirFoto(original._indice, botao);
     });
     $('a-fechar').addEventListener('click', function () { ampliada.close(); });
+    $('a-anterior').addEventListener('click', function () { mostrarFoto(indiceFoto - 1); });
+    $('a-proxima').addEventListener('click', function () { mostrarFoto(indiceFoto + 1); });
     ampliada.addEventListener('click', function (e) { if (e.target === ampliada) ampliada.close(); });
     ampliada.addEventListener('close', function () {
         if (ultimoFoco && ultimoFoco.focus) ultimoFoco.focus();
     });
+    ampliada.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') mostrarFoto(indiceFoto + 1);
+        if (e.key === 'ArrowLeft') mostrarFoto(indiceFoto - 1);
+    });
+    var toqueX = null;
+    ampliada.addEventListener('touchstart', function (e) { toqueX = e.changedTouches[0].clientX; }, { passive: true });
+    ampliada.addEventListener('touchend', function (e) {
+        if (toqueX === null) return;
+        var dx = e.changedTouches[0].clientX - toqueX;
+        if (Math.abs(dx) > 50) mostrarFoto(indiceFoto + (dx < 0 ? 1 : -1));
+        toqueX = null;
+    }, { passive: true });
 
     var botaoPausa = $('pausar');
     botaoPausa.addEventListener('click', function () {
         var pausada = galeria.classList.toggle('pausada');
         botaoPausa.setAttribute('aria-pressed', String(pausada));
         botaoPausa.textContent = pausada ? 'Continuar a rolagem' : 'Pausar a rolagem';
+    });
+
+    var botaoGrade = $('modo-grade');
+    botaoGrade.addEventListener('click', function () {
+        var grade = galeria.classList.toggle('grade');
+        botaoGrade.setAttribute('aria-pressed', String(grade));
+        botaoGrade.textContent = grade ? 'Ver em rolagem' : 'Ver em grade';
+        botaoPausa.hidden = grade;
     });
     if (reduzir) galeria.classList.add('estatica');
 

@@ -21,7 +21,7 @@ O Codex reúne em um só site três projetos de estudo que eu tinha feito separa
 - **Tripulação e navios:** 10 tripulantes e 2 navios em cards no estilo de papel de recompensa, com **busca** sem diferenciar acentos, **filtros** (todos, tripulantes, navios) e contagem de resultados.
 - **Janela de detalhes** com a cena do anime, a função e a história. Navega com os botões Anterior e Próximo ou com as setas do teclado, e cada personagem tem um link direto (por exemplo, `#chopper`).
 - **Akuma no Mi:** os três tipos (Paramecia, Zoan e Logia) e os quatro tripulantes que comeram uma fruta.
-- **Galeria** em rolagem contínua, com pausa, ampliação da imagem e legenda.
+- **Galeria** com 24 imagens em duas faixas de rolagem contínua que andam em sentidos opostos (cenas do anime e ilustrações), molduras levemente inclinadas, botão de pausa, **modo grade** para ver tudo de uma vez e ampliação com navegação por botões, setas do teclado ou deslizando o dedo.
 - **Sobre o projeto** com o aviso legal de projeto de fã.
 
 ## Decisões técnicas

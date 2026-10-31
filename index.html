@@ -369,91 +369,176 @@
         </section>
 
         <!-- GALERIA -->
-        <section class="secao" id="galeria" aria-labelledby="t-galeria">
+        <section class="secao secao-mar" id="galeria" aria-labelledby="t-galeria">
             <header class="secao-topo">
                 <h2 id="t-galeria">Galeria</h2>
-                <p>Cenas do anime em rolagem contínua. Passe o mouse, use o botão ou toque em uma imagem para ampliar.</p>
+                <p>Cenas do anime e ilustrações do bando em duas faixas que navegam em direções opostas. Passe o mouse
+                    para pausar e toque em uma imagem para ampliar.</p>
             </header>
             <div class="galeria-controle">
-                <button type="button" id="pausar" class="botao botao-sec botao-pequeno" aria-pressed="false">Pausar a rolagem</button>
+                <p class="galeria-info"><strong id="g-total">24</strong> imagens</p>
+                <div class="galeria-botoes">
+                    <button type="button" id="pausar" class="botao botao-sec botao-pequeno" aria-pressed="false">Pausar a rolagem</button>
+                    <button type="button" id="modo-grade" class="botao botao-sec botao-pequeno" aria-pressed="false">Ver em grade</button>
+                </div>
             </div>
-            <div class="galeria" id="galeria-rolagem" role="region" aria-label="Galeria de cenas" tabindex="0">
-                <ul class="trilha" id="trilha">
+            <div class="galeria" id="galeria-rolagem" role="region" aria-label="Galeria de imagens">
+                <div class="faixa">
+                    <ul class="trilha" id="trilha" aria-label="Cenas do anime">
                 <!--GERADO:galeria-->
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="luffy" aria-label="Ampliar a imagem de Monkey D. Luffy">
+                    <button type="button" class="foto" data-foto="luffy" data-tipo-foto="cena" aria-label="Ampliar a cena de Monkey D. Luffy">
                         <img src="assets/cenas/luffy.webp" alt="Cena do anime com Luffy sorrindo e segurando o chapéu de palha" width="720" height="410" loading="lazy">
                         <span>Monkey D. Luffy</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="zoro" aria-label="Ampliar a imagem de Roronoa Zoro">
+                    <button type="button" class="foto" data-foto="zoro" data-tipo-foto="cena" aria-label="Ampliar a cena de Roronoa Zoro">
                         <img src="assets/cenas/zoro.webp" alt="Cena do anime com Roronoa Zoro" width="720" height="410" loading="lazy">
                         <span>Roronoa Zoro</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="nami" aria-label="Ampliar a imagem de Nami">
+                    <button type="button" class="foto" data-foto="nami" data-tipo-foto="cena" aria-label="Ampliar a cena de Nami">
                         <img src="assets/cenas/nami.webp" alt="Cena do anime com Nami" width="720" height="410" loading="lazy">
                         <span>Nami</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="usopp" aria-label="Ampliar a imagem de Usopp">
+                    <button type="button" class="foto" data-foto="usopp" data-tipo-foto="cena" aria-label="Ampliar a cena de Usopp">
                         <img src="assets/cenas/usopp.webp" alt="Cena do anime com Usopp" width="720" height="410" loading="lazy">
                         <span>Usopp</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="sanji" aria-label="Ampliar a imagem de Sanji">
+                    <button type="button" class="foto" data-foto="sanji" data-tipo-foto="cena" aria-label="Ampliar a cena de Sanji">
                         <img src="assets/cenas/sanji.webp" alt="Cena do anime com Sanji" width="720" height="410" loading="lazy">
                         <span>Sanji</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="chopper" aria-label="Ampliar a imagem de Tony Tony Chopper">
+                    <button type="button" class="foto" data-foto="chopper" data-tipo-foto="cena" aria-label="Ampliar a cena de Tony Tony Chopper">
                         <img src="assets/cenas/chopper.webp" alt="Cena do anime com Tony Tony Chopper" width="720" height="410" loading="lazy">
                         <span>Tony Tony Chopper</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="robin" aria-label="Ampliar a imagem de Nico Robin">
+                    <button type="button" class="foto" data-foto="robin" data-tipo-foto="cena" aria-label="Ampliar a cena de Nico Robin">
                         <img src="assets/cenas/robin.webp" alt="Cena do anime com Nico Robin" width="720" height="410" loading="lazy">
                         <span>Nico Robin</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="brook" aria-label="Ampliar a imagem de Brook">
+                    <button type="button" class="foto" data-foto="brook" data-tipo-foto="cena" aria-label="Ampliar a cena de Brook">
                         <img src="assets/cenas/brook.webp" alt="Cena do anime com Brook" width="720" height="410" loading="lazy">
                         <span>Brook</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="franky" aria-label="Ampliar a imagem de Franky">
+                    <button type="button" class="foto" data-foto="franky" data-tipo-foto="cena" aria-label="Ampliar a cena de Franky">
                         <img src="assets/cenas/franky.webp" alt="Cena do anime com Franky" width="720" height="410" loading="lazy">
                         <span>Franky</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="jinbe" aria-label="Ampliar a imagem de Jinbe">
+                    <button type="button" class="foto" data-foto="jinbe" data-tipo-foto="cena" aria-label="Ampliar a cena de Jinbe">
                         <img src="assets/cenas/jinbe.webp" alt="Cena do anime com Jinbe" width="720" height="410" loading="lazy">
                         <span>Jinbe</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="merry" aria-label="Ampliar a imagem de Going Merry">
+                    <button type="button" class="foto" data-foto="merry" data-tipo-foto="cena" aria-label="Ampliar a cena de Going Merry">
                         <img src="assets/cenas/merry.webp" alt="Cena do anime com Going Merry" width="720" height="410" loading="lazy">
                         <span>Going Merry</span>
                     </button>
                 </li>
                 <li class="foto-item">
-                    <button type="button" class="foto" data-foto="sunny" aria-label="Ampliar a imagem de Thousand Sunny">
+                    <button type="button" class="foto" data-foto="sunny" data-tipo-foto="cena" aria-label="Ampliar a cena de Thousand Sunny">
                         <img src="assets/cenas/sunny.webp" alt="Cena do anime com Thousand Sunny" width="720" height="410" loading="lazy">
                         <span>Thousand Sunny</span>
                     </button>
                 </li>
                 <!--/GERADO:galeria-->
-            </ul>
+                    </ul>
+                </div>
+                <div class="faixa faixa-arte">
+                    <ul class="trilha trilha-reversa" id="trilha-arte" aria-label="Ilustrações da tripulação">
+                <!--GERADO:galeria-arte-->
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="sunny" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Thousand Sunny">
+                        <img src="assets/arte/sunny.webp" alt="Thousand Sunny, ilustração" width="400" height="400" loading="lazy">
+                        <span>Thousand Sunny</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="merry" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Going Merry">
+                        <img src="assets/arte/merry.webp" alt="Going Merry, ilustração" width="400" height="400" loading="lazy">
+                        <span>Going Merry</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="jinbe" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Jinbe">
+                        <img src="assets/arte/jinbe.webp" alt="Jinbe, ilustração" width="400" height="400" loading="lazy">
+                        <span>Jinbe</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="franky" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Franky">
+                        <img src="assets/arte/franky.webp" alt="Franky, ilustração" width="400" height="400" loading="lazy">
+                        <span>Franky</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="brook" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Brook">
+                        <img src="assets/arte/brook.webp" alt="Brook, ilustração" width="400" height="400" loading="lazy">
+                        <span>Brook</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="robin" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Nico Robin">
+                        <img src="assets/arte/robin.webp" alt="Nico Robin, ilustração" width="400" height="400" loading="lazy">
+                        <span>Nico Robin</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="chopper" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Tony Tony Chopper">
+                        <img src="assets/arte/chopper.webp" alt="Tony Tony Chopper, ilustração" width="400" height="400" loading="lazy">
+                        <span>Tony Tony Chopper</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="sanji" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Sanji">
+                        <img src="assets/arte/sanji.webp" alt="Sanji, ilustração" width="400" height="400" loading="lazy">
+                        <span>Sanji</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="usopp" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Usopp">
+                        <img src="assets/arte/usopp.webp" alt="Usopp, ilustração" width="400" height="400" loading="lazy">
+                        <span>Usopp</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="nami" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Nami">
+                        <img src="assets/arte/nami.webp" alt="Nami, ilustração" width="400" height="400" loading="lazy">
+                        <span>Nami</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="zoro" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Roronoa Zoro">
+                        <img src="assets/arte/zoro.webp" alt="Roronoa Zoro, ilustração" width="400" height="400" loading="lazy">
+                        <span>Roronoa Zoro</span>
+                    </button>
+                </li>
+                <li class="foto-item foto-item-arte">
+                    <button type="button" class="foto foto-arte" data-foto="luffy" data-tipo-foto="arte" aria-label="Ampliar a ilustração de Monkey D. Luffy">
+                        <img src="assets/arte/luffy.webp" alt="Monkey D. Luffy, ilustração" width="400" height="400" loading="lazy">
+                        <span>Monkey D. Luffy</span>
+                    </button>
+                </li>
+                <!--/GERADO:galeria-arte-->
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -514,7 +599,14 @@
         <figure class="modal-corpo">
             <button type="button" class="modal-fechar" id="a-fechar" aria-label="Fechar">×</button>
             <img id="a-imagem" class="modal-imagem" alt="">
-            <figcaption id="a-legenda"></figcaption>
+            <figcaption>
+                <span id="a-legenda"></span>
+                <span class="contador" id="a-contador" aria-live="polite"></span>
+            </figcaption>
+            <div class="foto-nav">
+                <button type="button" class="botao botao-sec botao-pequeno" id="a-anterior" aria-label="Imagem anterior">←</button>
+                <button type="button" class="botao botao-sec botao-pequeno" id="a-proxima" aria-label="Próxima imagem">→</button>
+            </div>
         </figure>
     </dialog>
 
